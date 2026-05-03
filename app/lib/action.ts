@@ -36,4 +36,10 @@ export  async function createInvoice(formData: FormData){
   redirect('/dashboard/invoices');
 }
 
-// Neela: 7/5 'pkt',  neela 6/10-12 pkt
+const UpdateInvoice = FormSchema.omit({id: true, date: true})
+export async function updateInvoice(formData: FormData){
+ UpdateInvoice.parse({
+  customerId: formData.get('customerId'),
+  amout: formData.get('amount');
+ })
+}
