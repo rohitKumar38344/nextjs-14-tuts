@@ -13,7 +13,7 @@ export const useDebounce = <T extends (...args: any[]) => void>(
   const debouncedFn = useCallback(function (...args: Parameters<T>) {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => fn(...args), delay);
-  }, []);
+  }, [fn, delay]);
 
   return debouncedFn;
 };
