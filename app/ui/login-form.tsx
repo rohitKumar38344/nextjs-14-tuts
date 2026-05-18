@@ -11,6 +11,11 @@ import { Button } from "./button";
 import { useActionState } from "react";
 import { authenticate } from "../lib/action";
 import { useSearchParams } from "next/navigation";
+import { Metadata } from "next";
+
+export const metadata:Metadata = {
+  title: "Login"
+}
 
 export default function LoginForm() {
   const searchParams = useSearchParams();
